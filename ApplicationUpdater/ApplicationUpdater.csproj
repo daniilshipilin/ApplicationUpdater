@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<AssemblyName>ApplicationUpdater</AssemblyName>
+		<RootNamespace>ApplicationUpdater</RootNamespace>
+		<ApplicationIcon>Images\update.ico</ApplicationIcon>
+		<Authors>Daniil Shipilin</Authors>
+		<Description>Application Updater library.</Description>
+		<Copyright>Daniil Shipilin</Copyright>
+		<Company>Illuminati Software Inc.</Company>
+		<PackageId>ApplicationUpdater</PackageId>
+		<Version>1.0.0</Version>
+		<Product>Application Updater library</Product>
+		<RepositoryUrl>https://github.com/daniilshipilin/ApplicationUpdater</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/daniilshipilin/ApplicationUpdater</PackageProjectUrl>
+		<PackageIcon>update.png</PackageIcon>
+		<NeutralLanguage>en</NeutralLanguage>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="GitVersion.MsBuild" Version="5.6.10">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Images\update.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>
