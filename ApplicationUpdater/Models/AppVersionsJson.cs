@@ -4,7 +4,7 @@ namespace ApplicationUpdater.Models
     using System.Collections.Generic;
     using Newtonsoft.Json;
 
-    public class AppVersionsJson
+    internal class AppVersionsJson
     {
         [JsonProperty("entries")]
         public IList<Entry>? AppEntries { get; set; }

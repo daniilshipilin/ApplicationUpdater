@@ -4,7 +4,7 @@
     using Microsoft.Win32;
 
     [SupportedOSPlatform("windows")]
-    public static class AppSettings
+    internal static class AppSettings
     {
         private const string RegistryBaseKey = @"SOFTWARE\Illuminati Software Inc.";
         private const string RegistryApplicationUpdaterKey = RegistryBaseKey + "\\Application Updater";
