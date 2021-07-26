@@ -50,7 +50,7 @@ namespace ApplicationUpdater
 
             if (appGuid == Guid.Empty)
             {
-                throw new ArgumentNullException(nameof(clientVersion));
+                throw new ArgumentNullException(nameof(appGuid));
             }
 
             if (string.IsNullOrEmpty(exeLaunchPath))
