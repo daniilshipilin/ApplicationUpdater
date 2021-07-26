@@ -102,11 +102,14 @@ namespace ApplicationUpdater
         /// <summary>
         /// Gets a pre-formatted update prompt string.
         /// </summary>
-        public string UpdatePromptFormatted =>
-            $"Newer program version available.{Environment.NewLine}" +
-            $"Current: {this.ClientVersion}{Environment.NewLine}" +
-            $"Available: {this.ServerVersion}{Environment.NewLine}{Environment.NewLine}" +
-            "Update program?";
+        public string GetUpdatePrompt()
+        {
+            return this.ServerVersionIsGreater
+                ? $"Newer program version available.{Environment.NewLine}" +
+                  $"Current: {this.ClientVersion}{Environment.NewLine}" +
+                  $"Available: {this.ServerVersion}"
+                : "Current program version is up to date.";
+        }
 
         /// <summary>
         /// Checks, whether update is available.

@@ -15,12 +15,12 @@
 
         bool ServerVersionIsGreater { get; }
 
-        string UpdatePromptFormatted { get; }
-
         Task<bool> CheckUpdateIsAvailable();
 
         Task ForceUpdate();
 
         Task Update();
+
+        string GetUpdatePrompt();
     }
 }
