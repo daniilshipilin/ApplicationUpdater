@@ -1,26 +1,25 @@
-﻿namespace ApplicationUpdater
+﻿namespace ApplicationUpdater;
+
+using System;
+using System.Threading.Tasks;
+
+public interface IUpdater
 {
-    using System;
-    using System.Threading.Tasks;
+    Guid AppGUID { get; }
 
-    public interface IUpdater
-    {
-        Guid AppGUID { get; }
+    bool CheckUpdateRequested { get; }
 
-        bool CheckUpdateRequested { get; }
+    Version ClientVersion { get; }
 
-        Version ClientVersion { get; }
+    Version ServerVersion { get; }
 
-        Version ServerVersion { get; }
+    bool ServerVersionIsGreater { get; }
 
-        bool ServerVersionIsGreater { get; }
+    Task<bool> CheckUpdateIsAvailable();
 
-        Task<bool> CheckUpdateIsAvailable();
+    Task ForceUpdate();
 
-        Task ForceUpdate();
+    Task Update();
 
-        Task Update();
-
-        string GetUpdatePrompt();
-    }
+    string GetUpdatePrompt();
 }

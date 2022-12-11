@@ -1,37 +1,36 @@
-namespace ApplicationUpdater.Models
+namespace ApplicationUpdater.Models;
+
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+internal class AppVersionsJson
 {
-    using System;
-    using System.Collections.Generic;
-    using Newtonsoft.Json;
+    [JsonPropertyName("entries")]
+    public IList<Entry>? AppEntries { get; set; }
 
-    internal class AppVersionsJson
+    public class Entry
     {
-        [JsonProperty("entries")]
-        public IList<Entry>? AppEntries { get; set; }
+        [JsonPropertyName("guid")]
+        public Guid GUID { get; set; }
 
-        public class Entry
-        {
-            [JsonProperty("guid")]
-            public Guid GUID { get; set; }
+        [JsonPropertyName("info")]
+        public string? AppInfo { get; set; }
 
-            [JsonProperty("info")]
-            public string? AppInfo { get; set; }
+        [JsonPropertyName("semver")]
+        public string? SemVer { get; set; }
 
-            [JsonProperty("semver")]
-            public string? SemVer { get; set; }
+        [JsonPropertyName("downloadurl")]
+        public string? DownloadUrl { get; set; }
 
-            [JsonProperty("downloadurl")]
-            public string? DownloadUrl { get; set; }
+        [JsonPropertyName("packagesha256")]
+        public string? PackageSha256 { get; set; }
 
-            [JsonProperty("packagesha256")]
-            public string? PackageSha256 { get; set; }
-
-            public override string ToString() =>
-                $"GUID: {this.GUID}{Environment.NewLine}" +
-                $"Info: {this.AppInfo}{Environment.NewLine}" +
-                $"Version: {this.SemVer}{Environment.NewLine}" +
-                $"DownloadUrl: {this.DownloadUrl}{Environment.NewLine}" +
-                $"Sha256: {this.PackageSha256}{Environment.NewLine}";
-        }
+        public override string ToString() =>
+            $"GUID: {this.GUID}{Environment.NewLine}" +
+            $"Info: {this.AppInfo}{Environment.NewLine}" +
+            $"Version: {this.SemVer}{Environment.NewLine}" +
+            $"DownloadUrl: {this.DownloadUrl}{Environment.NewLine}" +
+            $"Sha256: {this.PackageSha256}{Environment.NewLine}";
     }
 }
