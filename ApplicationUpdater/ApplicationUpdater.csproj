@@ -8,7 +8,6 @@
 		<RootNamespace>ApplicationUpdater</RootNamespace>
 		<ApplicationIcon>Images\update.ico</ApplicationIcon>
 		<Description>Application Updater library.</Description>
-		<Copyright>Daniil Shipilin</Copyright>
 		<Company>Illuminati Software Inc.</Company>
 		<PackageId>ApplicationUpdater</PackageId>
 		<Version>1.0.0</Version>
