@@ -7,7 +7,6 @@
 		<AssemblyName>ApplicationUpdater</AssemblyName>
 		<RootNamespace>ApplicationUpdater</RootNamespace>
 		<ApplicationIcon>Images\update.ico</ApplicationIcon>
-		<Authors>Daniil Shipilin</Authors>
 		<Description>Application Updater library.</Description>
 		<Copyright>Daniil Shipilin</Copyright>
 		<Company>Illuminati Software Inc.</Company>
