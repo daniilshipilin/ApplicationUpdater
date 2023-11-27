@@ -1,10 +1,8 @@
 ﻿namespace ApplicationUpdater.Helpers;
 
-using System.Runtime.Versioning;
 using Microsoft.Win32;
 
-[SupportedOSPlatform("windows")]
-internal static class AppSettings
+public static class AppSettings
 {
     private const string RegistryBaseKey = @"SOFTWARE\Illuminati Software Inc.";
     private const string RegistryApplicationUpdaterKey = RegistryBaseKey + "\\Application Updater";

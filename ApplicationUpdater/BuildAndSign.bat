@@ -2,7 +2,7 @@
 
 set "cert=%CodesignCertPath%"
 set "timestamp=http://timestamp.digicert.com"
-set "src=.\bin\Release\net6.0"
+set "src=.\bin\Release\netstandard2.1"
 
 del /S /Q "%src%" >nul 2>&1
 
