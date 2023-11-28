@@ -6,12 +6,14 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text.Json;
 using System.Threading.Tasks;
 using ApplicationUpdater.Helpers;
 using ApplicationUpdater.Models;
 
+[SupportedOSPlatform("windows")]
 public class Updater : IUpdater
 {
     private static readonly HttpClient Client = new()

@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-public class AppVersionsJson
+internal class AppVersionsJson
 {
     [JsonPropertyName("entries")]
     public IList<Entry>? AppEntries { get; set; }
