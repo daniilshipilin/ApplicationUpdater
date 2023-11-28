@@ -2,9 +2,10 @@
 
 set "cert=%CodesignCertPath%"
 set "timestamp=http://timestamp.digicert.com"
-set "src=.\bin\Release\net6.0"
+set "src=.\bin\Release\net8.0"
 
 del /S /Q "%src%" >nul 2>&1
+del /Q ".\bin\*.nupkg" >nul 2>&1
 
 dotnet build -c Release
 
@@ -18,9 +19,9 @@ for /r %%i in (%src%\*.exe) do (
     signtool.exe timestamp /tr "%timestamp%" /td sha256 "%%i"
 )
 
-dotnet pack -c Release --no-build
+dotnet pack -c Release -o .\bin --no-build
 
-for /r %%i in (".\bin\Release\*.nupkg") do (
+for /r %%i in (".\bin\*.nupkg") do (
     nuget.exe sign %%i -CertificatePath "%cert%" -Timestamper "%timestamp%"
 )
 
